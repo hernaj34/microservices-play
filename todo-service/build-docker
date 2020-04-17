@@ -1,0 +1,3 @@
+#!/bin/bash
+app="hernaj34/microservice-todo"
+docker build -t ${app} .
