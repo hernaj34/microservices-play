@@ -34,7 +34,7 @@
 
     Guardar con ESC + ":wq"
 
-5. Reinicuar kong
+5. Reiniciar kong
     ```sh
     docker-compose down
     docker-compose up
