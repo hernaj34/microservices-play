@@ -137,6 +137,23 @@ services:
         ports:
             - "1337:1337"
 
+    keycloak:
+        image: quay.io/keycloak/keycloak:9.0.3
+        restart: always
+        networks:
+            - microservice-net
+        environment:
+            KEYCLOAK_USER: admin
+            KEYCLOAK_PASSWORD: admin
+        ports:
+            - 8080:8080
+
+    todo-service:
+        image: hernaj34/microservice-todo
+        restart: always
+        networks:
+            - microservice-net
+
 secrets:
     kong_postgres_password:
         file: ./POSTGRES_PASSWORD
