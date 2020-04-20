@@ -1,5 +1,8 @@
 ## Instalar modulo "luarocks" en docker
 
+El fichero .rock a instalar es la versión de master compilada siguiendo las instrucciones de kong
+[Instrucciones](https://docs.konghq.com/2.0.x/plugin-development/distribution/)
+
 1. Copiar paquete luarocks en container
    docker cp kong-oidc-1.1.0-0.all.rock kong-compose_kong_1:/tmp
 
