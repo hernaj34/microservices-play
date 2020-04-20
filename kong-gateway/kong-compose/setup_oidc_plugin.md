@@ -1,24 +1,28 @@
 ## Instalar modulo "luarocks" en docker
 
-1. Entrar en docker como root
+1. Copiar paquete luarocks en container
+   docker cp kong-oidc-1.1.0-0.all.rock kong-compose_kong_1:/tmp
+
+2. Entrar en docker como root
 
     ```sh
     docker exec -ti --user=root kong-compose_kong_1 sh
     ```
 
-2. Instalar luarocks en container
+3. Instalar luarocks en container
 
     ```sh
     apk add luarocks
     ```
 
-3. Instalar libreria luarocks "kong-oidc"
+4. Instalar libreria luarocks "kong-oidc" con compilación de la versión master (2020.04.20)
 
     ```sh
-    luarocks install kong-oidc
+    cd /tmp
+    luarocks install kong-oidc-1.1.0-0.all.rock
     ```
 
-4. Crear fichero de configuración
+5. Crear fichero de configuración
 
     ```sh
     vi /etc/kong/kong.conf
@@ -34,7 +38,7 @@
 
     Guardar con ESC + ":wq"
 
-5. Reiniciar kong
+6. Reiniciar kong
     ```sh
     docker-compose down
     docker-compose up
